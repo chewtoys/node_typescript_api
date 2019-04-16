@@ -1,0 +1,61 @@
+{
+  "name": "typescript_app",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Me",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/index.js",
+    "start:dev": "./node_modules/.bin/better-npm-run start:dev",
+    "start:watch": "./node_modules/.bin/better-npm-run start:watch",
+    "test": "tsc && mocha dist/**/*.spec.js",
+    "lint": "eslint src --ext ts"
+  },
+  "betterScripts": {
+    "start:dev": {
+      "command": "ts-node --project tsconfig.json src/index.ts",
+      "env": {
+        "TYPEORM_ENTITIES": "src/**/*.entity.ts"
+      }
+    },
+    "start:watch": {
+      "command": "./node_modules/.bin/nodemon",
+      "env": {
+        "TYPEORM_ENTITIES": "src/**/*.entity.ts"
+      }
+    }
+  },
+  "dependencies": {
+    "@types/dotenv": "^4.0.3",
+    "@types/express": "^4.11.1",
+    "@types/mocha": "^5.2.0",
+    "@types/node": "^10.0.9",
+    "@types/nodemailer": "^4.6.0",
+    "@types/passport-jwt": "^3.0.1",
+    "@types/passport-local": "^1.0.33",
+    "body-parser": "^1.18.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "dotenv": "^5.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-promise": "^3.7.0",
+    "express": "^4.16.3",
+    "express-jwt-permissions": "^1.2.0",
+    "jsonwebtoken": "^8.2.1",
+    "nodemailer": "^4.6.5",
+    "nodemon": "^1.17.4",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.4.3",
+    "reflect-metadata": "^0.1.12",
+    "typeorm": "^0.2.5",
+    "typescript": "^2.8.3",
+    "typescript-eslint-parser": "^15.0.0"
+  },
+  "devDependencies": {
+    "better-npm-run": "^0.1.0",
+    "ts-node": "^6.0.3"
+  }
+}
